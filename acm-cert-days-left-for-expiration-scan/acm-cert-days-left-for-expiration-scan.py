@@ -22,7 +22,7 @@ def lambda_handler(event, context):
         print(days_left)
         # Expiration time alert, if changed please change in the html_body in ses_sender.py
         # Adds domain name and days left to expire to a list that will be pass to send_mail() function
-        if days_left < 400:
+        if days_left < 30:
             notification_list.append("Domain " + domain_name + " will expire in <b>" + str(days_left) + "</b> "
                                                                                                         "days")
     # If any certificate will expire in given time, email notification will be send
