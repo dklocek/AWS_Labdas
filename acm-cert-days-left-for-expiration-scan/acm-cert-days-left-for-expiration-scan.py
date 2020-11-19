@@ -18,8 +18,6 @@ def lambda_handler(event, context):
         expiration_date = cert_data['Certificate']['NotAfter'].date()
         days_left = expiration_date - datetime.datetime.now().date()
         days_left = days_left.days
-        print(domain_name)
-        print(days_left)
         # Expiration time alert, if changed please change in the html_body in ses_sender.py
         # Adds domain name and days left to expire to a list that will be pass to send_mail() function
         if days_left < 30:
